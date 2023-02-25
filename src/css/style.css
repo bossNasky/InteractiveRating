@@ -1,0 +1,21 @@
+:root {
+  --clr-primary-400: hsl(25, 97%, 53%);
+  --clr-primary-300: hsl(216, 12%, 8%);
+  --clr-neutral-400: hsl(0, 0%, 100%);
+  --clr-neutral-300: hsl(217, 12%, 63%);
+  --clr-neutral-200: hsl(216, 12%, 54%);
+  --clr-neutral-100: hsl(213, 19%, 18%);
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Overpass", sans-serif;
+  font-weight: 400;
+}
