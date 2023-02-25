@@ -1,6 +1,7 @@
 :root {
   --clr-primary-400: hsl(25, 97%, 53%);
   --clr-primary-300: hsl(216, 12%, 8%);
+  --clr-primary-200: hsl(213, 19%, 28%);
   --clr-neutral-400: hsl(0, 0%, 100%);
   --clr-neutral-300: hsl(217, 12%, 63%);
   --clr-neutral-200: hsl(216, 12%, 54%);
@@ -18,4 +19,153 @@
 body {
   font-family: "Overpass", sans-serif;
   font-weight: 400;
+}
+
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: var(--clr-primary-300);
+}
+
+.wrapper {
+  --width: 28rem;
+  max-width: var(--width);
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.support-rating,
+.summary {
+  padding: 1.5rem;
+  border-radius: 12px;
+  background-color: var(--clr-neutral-100);
+}
+
+.summary {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+[hidden] {
+  display: none;
+}
+
+.summary__rate {
+  padding: 0.5rem 1rem;
+  background-color: var(--clr-primary-200);
+  border-radius: 10rem;
+  color: var(--clr-primary-400);
+}
+
+.support-rating__image {
+  padding: 0.5rem;
+  border-radius: 50%;
+  background-color: var(--clr-primary-200);
+  aspect-ratio: 1/1;
+}
+
+.support-rating__title,
+.summary__title {
+  margin-top: 1.5rem;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--clr-neutral-400);
+}
+
+.support-rating__description,
+.summary__description {
+  margin-top: 1rem;
+  line-height: 1.5;
+  color: var(--clr-neutral-200);
+}
+
+.summary__description {
+  text-align: center;
+}
+
+.rating {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.rating__system {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.rating__item label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 50%;
+  background-color: var(--clr-primary-200);
+  color: var(--clr-neutral-300);
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.rating__item label:hover {
+  background-color: var(--clr-neutral-300);
+  color: var(--clr-neutral-400);
+}
+
+.rating__item input {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(
+    1px 1px 1px 1px
+  ); /* IE6, IE7 - a 0 height clip, off to the bottom right of the visible 1px box */
+  clip: rect(
+    1px,
+    1px,
+    1px,
+    1px
+  ); /*maybe deprecated but we need to support legacy browsers */
+  clip-path: inset(
+    50%
+  ); /*modern browsers, clip-path works inwards from each corner*/
+  white-space: nowrap; /* added line to stop words getting smushed together (as they go onto seperate lines and some screen readers do not understand line feeds as a space */
+}
+
+.rating__item input:checked + label,
+.rating__item input:focus + label {
+  background-color: var(--clr-primary-400);
+  color: var(--clr-neutral-400);
+}
+
+.btn {
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  font-family: inherit;
+}
+
+.btn--submit {
+  padding: 0.75rem;
+  border-radius: 10rem;
+  background-color: var(--clr-primary-400);
+  font-weight: 500;
+  color: var(--clr-neutral-400);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: all 0.3s;
+}
+
+.btn--submit:hover {
+  background-color: var(--clr-neutral-400);
+  color: var(--clr-primary-400);
 }
